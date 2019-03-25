@@ -6,3 +6,6 @@ Base bitrix Shop on docker.
 - Перейменувати контейнери у файлі docker-compose.yml та замінити порти
 - sudo docker-compose up -d
 - http://localhost:номер порта/bitrixsetup.php
+- В підключені БД в бітріксі замість localhost прописати db
+- логин пароль и назва бд - dev
+- 
