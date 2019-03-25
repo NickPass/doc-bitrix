@@ -11,6 +11,10 @@ Base bitrix Shop on docker.
 
 XDebug
 - изменить docker/php71/conf.d/xdebug.ini 
--- xdebug.remote.host = 172.20.0.1 (можно узнать командой docker inspect <containerNameOrId> - поле "Gateway")
--- xdebug.remote_port = 9130 в настройках ПХПШторма должен совпадать 
+
+xdebug.remote.host = 172.20.0.1 (можно узнать командой docker inspect <containerNameOrId> - поле "Gateway")
+
+xdebug.remote_port = 9130 в настройках ПХПШторма должен совпадать 
+
+- сделать рестарт контейнеров. docker restart $(docker ps -a -q) a
 - https://blog.denisbondar.com/post/phpstorm_docker_xdebug как настроить
