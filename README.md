@@ -18,3 +18,8 @@ xdebug.remote_port = 9130 в настройках ПХПШторма долже�
 
 - сделать рестарт контейнеров. docker restart $(docker ps -a -q) a
 - https://blog.denisbondar.com/post/phpstorm_docker_xdebug как настроить
+
+Додатково
+
+- зупинити автозагрузку контаейнерів docker update --restart=no my-container
+- ручний запуск docker start my-container my-container my-container
