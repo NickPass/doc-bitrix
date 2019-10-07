@@ -4,5 +4,5 @@
 #
 # Example: root:your_login@your.domain:mailhub.your.domain[:port]
 # where [:port] is an optional port number that defaults to 25.
-root:you_mailn@domain.ru:smtp.yandex.ru:465
-www-data:you_mailn@domain.ru:smtp.yandex.ru:465
+root:you_mailn@gmail.com:smtp.gmail.com:587
+www-data:you_mailn@gmail.com:smtp.gmail.com:587

@@ -10,7 +10,7 @@ RUN apt-get update \
         libssl-dev \
         libmcrypt-dev \
         curl \
-        ssmtp \
+        msmtp \
         openssh-server \
         iputils-ping netcat \
     && mkdir /var/run/sshd \
