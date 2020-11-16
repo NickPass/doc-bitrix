@@ -13,6 +13,9 @@ RUN apt-get update \
         msmtp \
         openssh-server \
         iputils-ping netcat \
+        jpegoptim \
+        optipng \
+        webp \
     && mkdir /var/run/sshd \
     && docker-php-ext-configure gd \
         --enable-gd-native-ttf \

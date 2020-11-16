@@ -9,7 +9,7 @@ networks:
 services:
   nginx:
     image: nginx:1.13
-    container_name: nginx
+    container_name: ${PROJECT_PREFIX}_n
     ports:
       - '80:80'
       - '443:443'
@@ -28,8 +28,8 @@ services:
           - dev.local
 
   php:
-    build: ./docker/php71
-    container_name: php
+    build: ./docker/${PHP_VERSION}
+    container_name: ${PROJECT_PREFIX}_p
     volumes:
       - ./src:/var/www/html
       - ./docker/php71/php.ini:/usr/local/etc/php/php.ini
@@ -49,14 +49,14 @@ services:
 
   db:
     image: mysql:5.7
-    container_name: db
+    container_name: ${PROJECT_PREFIX}_db
     ports:
         - '3306:3306'
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: dev
-      MYSQL_USER: dev
-      MYSQL_PASSWORD: dev
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     volumes:
       - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
       - ./docker/var/data/mysql:/var/lib/mysql
@@ -67,11 +67,11 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: phpmyadmin
+    container_name: ${PROJECT_PREFIX}_pma
     ports:
      - 8080:80
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     depends_on:
       - db
     restart: always
